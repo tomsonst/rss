@@ -1,0 +1,657 @@
+@font-face {
+  font-family: Indie;
+  src: url(fonts/IndieFlower-Regular.ttf); 
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto-Regular.ttf); 
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: Roboto;
+}
+
+/* пример кода взят с http://beloweb.ru/novichkam/kak-sdelat-flipping-effekt-s-pomoshhyu-css-animatsii.html */
+
+.flip-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 250px;
+    margin: 20px 25px;
+}
+   
+.flipper_active {
+  transform: rotateY(180deg);
+}
+   
+.flip-container, .front, .back {
+  width: 300px;
+  height: 250px;
+  
+}
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;   
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(img/cry.jpg) no-repeat;
+  background-color: white;
+  color: black;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 24px;
+  padding-bottom: 10px;
+  position: absolute;
+  box-shadow: 0px 1px 5px 2px #b8b5b5;
+  transition: all 0.3s;
+}
+
+.front_play_mode {
+  background-size: auto;
+  color: rgba(255,255,255, 0);
+}
+
+.front:hover, .back:hover {
+  box-shadow: 0px 5px 10px 2px #b8b5b5;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/*.word_of_category {
+  width: 300px;
+  height: 250px;
+  background-image: url("img/cry.jpg");
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 1px 5px 2px #b8b5b5;
+  margin: 20px 25px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.word_of_category:hover {
+  box-shadow: 0px 5px 10px 2px #b8b5b5;
+}*/
+
+.word {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 35px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.button_rotate {
+  position: absolute;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: url("img/rotate.svg") no-repeat 50% 50%;
+  background-size: 30px;
+  outline: none;
+  border: 0px;
+}
+
+.header {
+  max-width: 1350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 55px;
+  padding: 0px 0px;
+}
+
+.nav {
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  width: 320px;
+  height: 100vh;
+  top: 0px;
+  left: -320px;
+  background: linear-gradient(rgb(0, 153, 174), rgb(0, 191, 130) 40%);
+  transition: 0.3s;
+}
+
+.nav_active {
+  left: 0px;
+}
+
+.nav_play_mode {
+  background: linear-gradient(40deg,#ffd86f,#fc6262);
+}
+
+.nav > ul {
+  position: relative;
+  top: 15%;
+  left: 25%;
+  height: fit-content;
+}
+
+.nav > ul > li {
+  list-style: none;
+  font-size: 23px;
+  color: white;
+  margin: 15px 0px;
+  cursor: pointer;
+}
+
+.link_active {
+  text-decoration: underline;
+}
+
+/* Кнопка бургер меню взята с https://migo.com.ua/blog/css/animaciya-hamburger-menu-icons-chistuy-css.html*/
+
+.toggle-hamburger {
+    background-color: rgba(255,255,255, 0);
+    z-index: 11;
+    color: #ccc;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 34px;
+    height: 30px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+  .toggle-hamburger:focus {
+    outline: none;
+  }
+
+  .toggle-hamburger span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 13px;
+    height: 4px;
+    border-radius: 30px;
+    background: #ccc;
+  }
+  .toggle-hamburger span::before, .toggle-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 30px;
+    background: #ccc;
+    content: "";
+  }
+  .toggle-hamburger span::before {
+    top: -10px;
+  }
+  .toggle-hamburger span::after {
+    bottom: -10px;
+  }
+
+  .toggle-hamburger.toggle-hamburger__animx span {
+    -webkit-transition: background 0s 0.3s;
+    transition: background 0s 0.3s;
+  }
+  .toggle-hamburger.toggle-hamburger__animx span::before, .toggle-hamburger.toggle-hamburger__animx span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+            transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0s;
+            transition-delay: 0.3s, 0s;
+  }
+  .toggle-hamburger.toggle-hamburger__animx span::before {
+    -webkit-transition-property: top, transform;
+    transition-property: top, transform;
+  }
+  .toggle-hamburger.toggle-hamburger__animx span::after {
+    -webkit-transition-property: bottom, transform;
+    transition-property: bottom, transform;
+  }
+  
+  /* when menu open: */
+  .toggle-hamburger.toggle-hamburger__animx.is-active span {
+    background: none;
+  }
+  .toggle-hamburger.toggle-hamburger__animx.is-active span::before, .toggle-hamburger.toggle-hamburger__animx.is-active span::after {
+    background-color: #b2002b;
+    -webkit-transition-delay: 0s, 0.3s;
+            transition-delay: 0s, 0.3s;
+  }
+  .toggle-hamburger.toggle-hamburger__animx.is-active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .toggle-hamburger.toggle-hamburger__animx.is-active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+h1 {
+    font-weight: 500;
+    font-size: 40px;
+    font-family: cursive;
+}
+
+.train_button {
+    width: 106px;
+    height: 40px;
+    text-align: left;
+    position: relative;
+    background: linear-gradient(rgb(0, 153, 174), rgb(0, 191, 130) 40%);
+    border-radius: 6px;
+    border: 0px;
+    outline: none;
+}
+
+.train_content, .play_content {
+  margin-left: 6px;
+  font-size: 20px;
+  font-family: 'Roboto';
+  color: white;
+  transition: all 0.3s;
+}
+
+.train_slider {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-image: linear-gradient(180deg,#fff 40%,#f0f0f0);
+    border-radius: 6px;
+    top: 3px;
+    right: 3.5px;
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+.train_slider::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: black;
+  background-image: linear-gradient(180deg,#eee,#fff);
+  border-radius: 50%;
+  top: 28%;
+  left: 28%;
+  position: absolute;
+}
+
+.play_content {
+    display: none;
+}
+
+.train_slider_active {
+    right: 69px;
+}
+
+.train_content_active {
+    opacity: 0;
+    display: none;
+}
+
+.play_content_active {
+    display: block;
+    margin-right: 10px;
+}
+
+.train_button_active {
+    text-align: right;
+    background: linear-gradient(40deg,#ffd86f,#fc6262);
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 0px;
+}
+
+.category {
+  width: 300px;
+    height: 280px;
+    cursor: pointer;
+    position: relative;
+    background: linear-gradient(rgb(0, 153, 174), rgb(0, 191, 130) 40%, rgb(255, 255, 255) 0px, rgb(255, 255, 255));
+    box-shadow: 0px 1px 5px 2px #b8b5b5;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    margin: 20px 25px;
+    transition: all 0.3s;
+}
+
+.category:hover {
+  box-shadow: 0px 5px 10px 2px #b8b5b5;
+}
+
+.category_play_mode {
+  background: linear-gradient(#ffd86f,#fc6262 40%, rgb(255, 255, 255) 0px, rgb(255, 255, 255));
+}
+
+.category_bottom {
+  font-size: 30px;
+    text-align: center;
+    width: 100%;
+    height: 175px;
+    vertical-align: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 25px;
+}
+
+.category_img {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 155%;
+  border: 10px solid white;
+  border-radius: 50%;
+  top: 15%;
+  left: 25%;
+}
+
+.start_game {
+  width: 650px;
+  height: 60px;
+  background: linear-gradient(40deg,#ffd86f,#fc6262);
+  margin: 20px 0px;
+  border-radius: 6px;
+  color: white;
+  font-size: 22px;
+  outline: none;
+  border: 0px;
+}
+
+.start_game_active {
+  align-self: flex-end;
+  width: 70px;
+  height: 70px;
+  margin: 20px 260px;
+  border-radius: 50%;
+  color: rgba(255,255,255,0);
+  background: url(img/repeat.svg) 50% no-repeat, linear-gradient(40deg,#ffd86f,#fc6262);
+  background-size: 70%, 100%;
+}
+
+.wrap_container_stars {
+  width: 100%;
+  overflow: hidden;
+  justify-content: right;
+}
+
+.container_stars {
+  width: 10000px;
+  height: 40px;
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 20px;
+}
+
+.star_win {
+  width: 40px;
+  height: 40px;
+  background: url(img/star-win.svg) no-repeat;
+  background-size: 100%;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  background: url(img/star.svg) no-repeat;
+  background-size: 100%;
+}
+
+footer {
+  max-width: 1350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.logo_rss {
+  width: 55px;
+  height: 20px;
+  background-image: url("img/logo_rss.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.link_github, .year {
+  font-weight: 900;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: black;
+}
+
+.link_github {
+  text-decoration: none;
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #d55454;
+}
+
+.smile_bad {
+  background-image: url(img/failure.jpg);
+  width: 60vh;
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
+}
+
+.smile_good {
+  background-image: url(img/success.jpg);
+  width: 60vh;
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
+}
+
+.table {
+  width: 100%;
+  background: rgba(69,120,181,0.2);
+  text-align: center;
+  box-shadow: 5px -45px 15px 0px #b8b5b5;
+  margin: 0px 20px;
+  border-spacing: 0px;
+}
+
+.table_title {
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  background: rgba(20,49,255,0.4);
+  padding: 5px 0px;
+}
+
+.table_sort, .table_content {
+  font-size: 18px;
+  font-weight: 900;
+  padding: 5px 0px;
+  user-select: none;
+}
+
+.table_sort {
+  cursor: pointer;
+}
+
+.table_content {
+  font-weight: 400;
+}
+
+.container_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 20px 10px;
+}
+
+.reset, .btn_difficult_word {
+  background: rgb(238,174,202);
+  background: linear-gradient(356deg, rgba(238,174,202,1) 0%, rgba(255,142,20,0.9026961126247374) 52%);
+  margin: 10px 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #FFFFCD;
+  border-radius: 5px;
+  transition: all 0.3s;
+  outline: none;
+  border: 0px;
+}
+
+.reset:hover, .btn_difficult_word:hover {
+  transform: scale(1.05);
+}
+
+.arrow {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url('img/Arrow.png');
+  background-repeat: no-repeat;
+  background-position: 2px 0px;
+  background-size: 15px 15px;
+  transition: all 0.2s;
+}
+
+.arrow_active {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1418px) {
+
+.header, footer, .container_buttons, .table {
+  max-width: 990px;
+}
+
+
+}
+
+@media screen and (max-width: 1066px) {
+
+  .header, footer, .container_buttons, .table {
+    max-width: 645px;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .table_sort, .table_content {
+    font-size: 16px;
+  }
+  
+  
+}
+
+@media screen and (max-width: 716px) {
+
+  .header, footer, .container_buttons, .table {
+    max-width: 295px;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .start_game {
+    width: 300px;
+    margin: 20px 30px;
+  }
+
+  .start_game_active {
+    width: 70px;
+    height: 70px;
+    margin: 20px 180px;
+  }
+
+  .table_sort, .table_content {
+    font-size: 14px;
+  }
+
+  .container_buttons {
+    justify-content: center;
+  }
+  
+}
+
+@media screen and (max-width: 505px) {
+
+  .category {
+    margin: 20px 0px;
+  }
+
+  .flip-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 250px;
+    margin: 20px 0px;
+  }
+
+  .start_game {
+    margin: 20px 0px;
+  }
+
+  .start_game_active {
+    width: 70px;
+    height: 70px;
+    margin: 20px 113px;
+  }
+
+  .table_sort, .table_content {
+    font-size: 11px;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+    background-size: contain;
+  }
+  
+}

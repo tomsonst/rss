@@ -1,0 +1,465 @@
+@font-face {
+    font-family: 'Roboto';
+    src:
+      url('assets/Roboto-Bold.woff') format('woff'),
+      url('assets/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src:
+      url('assets/Roboto-Regular.woff') format('woff'),
+      url('assets/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src:
+      url('assets/Roboto-Medium.woff') format('woff'),
+      url('assets/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+body {
+    width: 1600px;
+    margin: auto;
+}
+
+.start {
+    color: #ffffff;
+    width: 100%;
+    height: 744px;
+    background-image: url(assets/bg-image.png);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 1600px;
+    margin: auto;
+    height: 95px;  
+}
+
+.logo {
+    margin-top: 0px;
+   
+}
+
+
+.navigation {
+    display: flex;
+    padding-left: 502px;
+    padding-right: 516px;
+}
+
+.navigation > li {
+    padding: 0px;
+    margin-right: 86px;
+    margin-top: 38px;
+    list-style-type: none;
+}
+
+.navigation > li > a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color:#F2F2F2;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.navigation > li:nth-child(1){
+    height: 18px;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 2px;
+}
+
+.navigation > li > a:hover {
+    color: #818181;
+}
+
+.navigation > li:nth-child(3) {
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 25px;
+}
+
+main {
+    width: 1600px;
+    margin: auto;
+}
+
+.yl {
+    font-family: 'Roboto', sans-serif;
+    font-size: 63px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 21px;
+    margin-top: 134px;
+    margin-left: 4px;
+    font-style: normal;
+}
+
+.byl {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.57em;
+    letter-spacing: 0.87px;
+    margin-left: 3px;
+}
+
+button {
+    width: 184px;
+    height: 46px;
+    background-color: #00AFDB;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, border-radius 2s, background-color 2s, transform 2s;
+}
+
+button:hover {
+    transform: scale(1.3);
+    border-radius: 5px;
+}
+
+.social {
+    display: flex;
+    width: 170px;
+    height: 20px;
+    padding: 0px;
+    margin: auto;
+    margin-top: 183px;
+    list-style-type: none;
+}
+
+.social > li > img {
+    margin-right: 30px;
+    -webkit-transition: -webkit-transform 2s;
+    transition: transform 1s;
+    
+}
+
+.social > li > img:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.idea {
+    width: 100%;
+    height: 842px;
+    display: flex;
+}
+
+.info {
+    width: 407px;
+    height: 233px;
+    margin-top: 294px;
+    margin-left: 268px;
+}
+
+.info > h2 {
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.45px;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}
+
+.info > p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin-bottom: 2px;
+}
+
+.idea > img {
+    width: 407px;
+    height: 582px;
+    margin-top: 120px;
+    margin-left: 249px;
+}
+
+.com {
+    width: 100%;
+    height: 504px;
+    background-color: #F5F6F7;
+    display: flex;
+    padding: 0px;
+}
+
+.info-com {
+    width: 298px;
+    height: 175px;
+    margin-top: 155px;
+    margin-left: 270px;
+    text-align: center;
+}
+
+.info-com > h2 {
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    margin-top: 15px;
+    margin-bottom: 13px;
+}
+
+.info-com > p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 1.43em;
+    margin-bottom: 2px;
+}
+
+.slide {
+    height: 424px;
+    width: 900px;
+    text-align: center;
+    padding-top: 80px;
+    marging: 0px;
+}
+.nav-slide {
+    width: 110px;
+    height: 18px;
+    margin-left: 667px;
+    font-family: 'Roboto' sans-serif;
+}
+
+.nav-slide > span {
+    font-size: 18px;
+    margin: 0px 1px 0px 2px;
+}
+
+.nav-slide > img {
+    transition: transform 0.3s;
+    margin: 0px 10px 0px 10px;
+}
+
+.nav-slide > img:hover {
+    transform: scale(1.5);
+    opacity: 0.5;
+}
+
+.slide-foto {
+    display: flex;
+    width: 100%;
+    margin-left: 109px;
+    margin-top: 22px;
+
+}
+
+.slide-foto > img {
+    margin-left: 30px;
+}
+
+.implement {
+    width: 100%;
+    height: 842px;
+    display: flex;
+}
+
+.implement > img {
+    margin: 120px 0px 0px 269px;
+    width: 407px;
+    height: 582px;
+}
+
+.rc {
+    margin: 318px 0px 0px 139px;
+    width: 412px;
+}
+
+.rc > form > button {
+    width: 180px;
+    margin-top: 29px;
+}
+
+.sign_up {
+    width: 100%;
+    height: 325px;
+    background-image: url("assets/sign_up.png");
+    text-align: center;
+    padding-top: 199px;
+}
+
+.sign_up > h2 {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sign_up > form {
+    display: flex;
+    margin-left: 596px;
+}
+
+.sign_up > form > input {
+    width: 313px;
+    height: 43px;
+    color: #373737;
+    margin: 29px 0px 0px 0px;
+    padding-left: 24px;
+}
+
+.sign_up > form > button {
+    width: 66px;
+    height: 45px;
+    background-image: url("assets/check-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: background-size 2s;
+    margin: 30px 0px 0px 0px ;
+    padding: 0px;
+}
+
+.sign_up > form > button:hover {
+    background-size: 30px 30px;
+    background-color: #009CC2;
+    transform: none;
+    border-radius: 0px;
+}
+
+.download {
+    background-color: #F5F6F7;
+    width: 100%;
+    height: 345px;
+    text-align: center;
+    padding-top: 119px;
+}
+
+.download > h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 0.4px;
+}
+
+.download > p {
+    margin-top: 19px;
+    font-size: 14px;
+    line-height: 1.44em;
+}
+
+.download > form {
+    display: flex;
+    text-align: center;
+    margin-left: 599px;
+}
+
+.download > form > button {
+    margin: 30px 30px 0px 0px;
+    padding: 0px;
+    width: 186px;
+    height: 46px;
+    display: flex;
+}
+
+.download > form > button > span {
+    margin : 15px 0px 0px 18px;
+}
+
+.apple {
+    width: 59px;
+    height: 46px;
+    background-image: url("assets/apple.png");
+    background-color: #009CC2;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 0px 0px 0px 19px;
+}
+
+.android {
+    width: 59px;
+    height: 46px;
+    background-image: url("assets/android.png");
+    background-color: #009CC2;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 0px 0px 0px 15px;
+}
+
+footer {
+    width: 100%;
+    height: 125px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 0px 0px 0px;
+    display: flex;
+}
+
+footer > ul {
+    width: 500px;
+    display: flex;
+    list-style-type: none;
+    margin: 0px 0px 0px 141px;
+    padding-top: 12px;
+}
+
+footer > ul > li > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 0px 19px 0px 19px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+
+}
+
+footer > ul > li > a:hover {
+    color: #818181;
+}
+
+footer > ul > li > span {
+    margin:0px;
+    padding: 0px;
+    font-size: 9px;
+    color: #4E4E4E;
+}
+
+footer > div {
+    width: 44px;
+    height: 45px;
+    margin: 0px 0px 0px 137px;
+}
+
+footer > span {
+    margin: 15px 0px 0px 449px;
+    font-size: 14px;
+    color: #818181;
+}
